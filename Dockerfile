@@ -10,10 +10,13 @@ RUN apt-get update && \
     build-essential \
     python3 \
     python3-distutils \
-    python3-pip
+    python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt && \
+    rm /tmp/*
 
 WORKDIR /root
 COPY start.sh /root/
