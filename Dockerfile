@@ -20,22 +20,26 @@ COPY    requirements.txt        /tmp/requirements.txt
 RUN     pip install --no-cache-dir -r /tmp/requirements.txt \
         && rm /tmp/*
 
-# create guest user
-RUN     mkdir /var/run/sshd
-RUN     useradd -m guest
-RUN     passwd -d guest
-RUN     sed -ri 's/^#?PermitEmptyPasswords\s+.*/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
-RUN     sed -ri 's/^#?UsePAM\s+.*/UsePAM no/' /etc/ssh/sshd_config
-RUN     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-ENV     NOTVISIBLE      "in users profile"
-RUN     echo "export VISIBLE=now" >> /etc/profile
-ENTRYPOINT      ["/usr/sbin/sshd"]
+USER root
+SHELL ["/bin/bash", "-c"]
+RUN mkdir -p ~/.ssh
 
-# set up expose port
-WORKDIR /root
-COPY    start.sh        /root/
-ARG     PORT=2000
-ENV     PORT    ${PORT}
-EXPOSE  ${PORT}
-WORKDIR /workspace
-CMD     ["-D"]
+#ARG GITHUB_USERNAME="ryoppippi"
+#RUN curl -s https://github.com/${GITHUB_USERNAME}.keys >>  ~/.ssh/authorized_keys
+RUN curl -s https://github.com/ryoppippi.keys >>  ~/.ssh/authorized_keys
+
+WORKDIR /root/workspace
+
+RUN mkdir /var/run/sshd
+RUN echo 'root:screencast' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
+
