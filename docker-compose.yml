@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  main:
+    build:
+      context: .
+    ports:
+      - 2000:2000
+    volumes:
+      - ./workspace:/workspace
+    restart: always

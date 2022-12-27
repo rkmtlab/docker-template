@@ -1,0 +1,15 @@
+jupyter
+jupyterlab
+numpy
+pandas
+matplotlib
+scikit-learn
+scikit-image
+scipy
+torch
+torchvision
+tqdm
+albumentations
+tensorflow-gpu
+Pillow
+opencv-python
