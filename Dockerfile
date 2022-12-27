@@ -1,5 +1,5 @@
-ENV     DEBIAN_FRONTEND noninteractive
 FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04
+ENV     DEBIAN_FRONTEND noninteractive
 
 # add nvidia key
 RUN     apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub \
