@@ -12,7 +12,8 @@ RUN apt-get update && \
     python3-distutils \
     python3-pip
 
-RUN pip install -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 WORKDIR /root
 COPY start.sh /root/
