@@ -58,7 +58,7 @@ $ git checkout dev/use-github
 * `docker-compose down`
 
 
-## 参照ページ
+## 関連ページ
 暦本研scrapbox
 [VSCode を使って、Jupyter を使える docker container を作る。](https://scrapbox.io/rkmtlab/VSCode_%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%80%81Jupyter_%E3%82%92%E4%BD%BF%E3%81%88%E3%82%8B_docker_container_%E3%82%92%E4%BD%9C%E3%82%8B%E3%80%82)
 
