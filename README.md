@@ -4,9 +4,28 @@
 
 
 ## 使い方
-### コンテナの作成
-* 使用するディレクトリに移動
-*	レポジトリの内容を clone し、`dev/use-github` ブランチに移動
+### JupyterLab を使う場合
+* 使用するディレクトリにてレポジトリの内容を clone
+
+```
+$ git clone https://github.com/rkmtlab/docker-template.git
+$ cd docker-template
+```
+
+* docker の中に入る。 `docker exec -it (container名) bash`
+* `/root/` にて、jupyter server を立ち上げる
+```
+$ cd /root/
+$ . start.sh
+```
+
+* local PC のブラウザの検索欄に、 `http://(サーバーのIPアドレス）:(開けたサーバーのポート）` と打ち込むと JupyterLab が立ち上がる。
+  * 例： `https://172.244.9.33:2987`
+
+
+### VSCode を使う場合
+#### コンテナの作成
+* 使用するディレクトリにてレポジトリの内容を clone し、`dev/use-github` ブランチに移動
 
 ```
 $ git clone https://github.com/rkmtlab/docker-template.git
@@ -18,7 +37,7 @@ $ git checkout dev/use-github
   * `docker-compose.yml` のサーバーに開けるポート番号 と `Dockerfile`のgithub アカウント名。
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
-### VSCode の設定
+#### VSCode の設定
 * vscodeでRemote Explore という拡張機能を入れる
   * ![image](https://user-images.githubusercontent.com/64390823/209894093-3fcbb271-33b2-4bf4-896f-1826f282cb71.png)
 
