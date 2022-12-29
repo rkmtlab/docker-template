@@ -1,12 +1,12 @@
 # docker-template
 ## 概要
-* `docker-compose up --build -d` とするだけで、分析環境ができる。
+* `docker-compose up --build -d` とするだけで、Jupyter を用いる分析環境ができる。
 
 
 ## 使い方
 ### コンテナの作成
 * 使用するディレクトリに移動
-*	レポジトリの内容を clone し、dev/use-github ブランチに移動
+*	レポジトリの内容を clone し、`dev/use-github` ブランチに移動
 
 ```
 $ git clone https://github.com/rkmtlab/docker-template.git
