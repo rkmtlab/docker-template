@@ -5,7 +5,7 @@
 
 ## 使い方
 ### JupyterLab を使う場合
-* 使用するディレクトリにてレポジトリの内容を clone
+* 使用するディレクトリにてレポジトリを clone
 
 ```
 $ git clone https://github.com/rkmtlab/docker-template.git
@@ -28,7 +28,7 @@ $ . start.sh
 
 ### VSCode を使う場合
 #### コンテナの作成
-* 使用するディレクトリにてレポジトリの内容を clone し、`dev/use-github` ブランチに移動
+* 使用するディレクトリにてレポジトリを clone し、`dev/use-github` ブランチに移動
 
 ```
 $ git clone https://github.com/rkmtlab/docker-template.git
