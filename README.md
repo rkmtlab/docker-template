@@ -11,8 +11,7 @@
 $ git clone https://github.com/rkmtlab/docker-template.git
 $ cd docker-template
 ```
-* `docker-compose.yml` の中身を変更。
-  * `docker-compose.yml` のサーバーに開けるポート番号。
+* `docker-compose.yml` のサーバーに開けるポート番号を変更。
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 * docker の中に入る。 `docker exec -it (container名) bash`
