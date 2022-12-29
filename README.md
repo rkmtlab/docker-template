@@ -45,14 +45,14 @@ $ git checkout dev/use-github
 
 
 
-* `ssh` の右にある + をクリック。
+* `ssh` の右にある `+` をクリック。
 * 出てきた窓に `ssh root@(IP address) -p (docker-compose で設定した、リモート接続先に開けたポート番号) -i (github の秘密鍵へのPATH) ` と入力する。
 * 出てくる「 `~/.ssh/config` を開く」のボタンを押す。
 
 * `Host (IPアドレス）` となっているところの `(IPアドレス）`を好きな名前に変える。
   * (`dvorak`など。`a` でも `b` でもOK。入るときに使う名前なので何でもいい。)
 * `REMOTE` の右側の更新ボタンを押す。
-  * 現れる、（設定した名前）の右側のボタンを押すと、VSCode で Jupyter が使える。
+  * 現れる、`（設定した名前）`の右側のボタンを押すと、VSCode で Jupyter が使える。
 
 
 
