@@ -15,9 +15,9 @@ $ cd docker-template
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 * docker の中に入る。 `docker exec -it (container名) bash`
-* `/root/` にて、jupyter server を立ち上げる。
+* `/root/` にあるstart.sh を`/workspace/`に持ってきて、jupyter server を立ち上げる。
 ```
-$ cd /root/
+$ cp /root/start.sh
 $ . start.sh
 ```
 
