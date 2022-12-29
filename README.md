@@ -17,7 +17,7 @@ $ cd docker-template
 * docker の中に入る。 `docker exec -it (container名) bash`
 * `/root/` にあるstart.sh を`/workspace/`に持ってきて、jupyter server を立ち上げる。
 ```
-$ cp /root/start.sh
+$ cp /root/start.sh ./
 $ . start.sh
 ```
 
