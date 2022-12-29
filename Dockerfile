@@ -1,3 +1,4 @@
+# ** change version of cuda, ubuntu on the basis of your machine
 FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04
 ENV     DEBIAN_FRONTEND noninteractive
 
@@ -9,6 +10,7 @@ RUN     apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/c
 RUN     apt-get update && apt-get install -y \
         curl \
         git \
+        vim \
         build-essential \
         openssh-server \
         python3 \
@@ -24,9 +26,8 @@ USER root
 SHELL ["/bin/bash", "-c"]
 RUN mkdir -p ~/.ssh
 
-#ARG GITHUB_USERNAME="ryoppippi"
-#RUN curl -s https://github.com/${GITHUB_USERNAME}.keys >>  ~/.ssh/authorized_keys
-RUN curl -s https://github.com/ryoppippi.keys >>  ~/.ssh/authorized_keys
+# ** change github username and delete $ and {}
+RUN curl -s https://github.com/${GITHUB_USERNAME}.keys >>  ~/.ssh/authorized_keys
 
 WORKDIR /root/workspace
 
