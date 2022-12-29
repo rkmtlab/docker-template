@@ -54,6 +54,8 @@ $ git checkout dev/use-github
 * `REMOTE` の右側の更新ボタンを押す。
   * 現れる、`（設定した名前）`の右側のボタンを押すと、VSCode で Jupyter が使える。
 
+### コンテナの閉じ方
+* `docker-compose down`
 
 
 ## 参照ページ
