@@ -19,18 +19,6 @@ RUN     apt-get update && apt-get install -y \
 COPY    requirements.txt        /tmp/requirements.txt
 RUN     pip install --no-cache-dir -r /tmp/requirements.txt \
         && rm /tmp/*
-
-# create guest user
-RUN     mkdir /var/run/sshd
-RUN     useradd -m guest
-RUN     passwd -d guest
-RUN     sed -ri 's/^#?PermitEmptyPasswords\s+.*/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
-RUN     sed -ri 's/^#?UsePAM\s+.*/UsePAM no/' /etc/ssh/sshd_config
-RUN     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-ENV     NOTVISIBLE      "in users profile"
-RUN     echo "export VISIBLE=now" >> /etc/profile
-ENTRYPOINT      ["/usr/sbin/sshd"]
-
 # set up expose port
 WORKDIR /root
 COPY    start.sh        /root/
@@ -38,4 +26,4 @@ ARG     PORT=2000
 ENV     PORT    ${PORT}
 EXPOSE  ${PORT}
 WORKDIR /workspace
-CMD     ["-D"]
+CMD ["/root/start.sh"]
