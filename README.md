@@ -11,7 +11,7 @@
 $ git clone https://github.com/rkmtlab/docker-template.git
 $ cd docker-template
 ```
-* `docker-compose.yml` のサーバーに開けるポート番号を変更。
+* `docker-compose.yml` のサーバーに開けるポート番号を変更。 `Dockerfile` で、マウントする場所を調整。
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 * docker の中に入る。 `docker exec -it (container名) bash`
@@ -36,7 +36,7 @@ $ git checkout dev/use-github
 ```
 
 * `docker-compose.yml` と `Dockerfile`の中身を変更。
-  * `docker-compose.yml` のサーバーに開けるポート番号 と `Dockerfile`のgithub アカウント名。
+  * `docker-compose.yml` のサーバーに開けるポート番号 と `Dockerfile`のgithub アカウント名・マウントする場所の調整。
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 #### VSCode の設定
