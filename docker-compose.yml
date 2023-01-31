@@ -8,6 +8,7 @@ services:
       # - {server port}:{docker port}
       - 2000:2000  # to use jupyterlab
       - "2022:22"  # to use vscode
+
     volumes:
-      - ./workspace:/workspace
+      - ./workspace:/root/workspace
     restart: always
