@@ -35,10 +35,11 @@ cd docker-template
 git checkout dev/use-github
 ```
 
-* `docker-compose.yml` と `Dockerfile`の中身を変更。
+* `docker-compose.yml` と `Dockerfile` と `requirements.txt` の中身を変更。
   * `docker-compose.yml` のサーバーに開けるポート番号、ubuntu・cuda のversion と `Dockerfile`のgithub アカウント名・マウントする場所の調整。
     * ubuntu version : `cat /etc/os-release`
     * cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
+   * `requirements.txt` で、 `tensorflow-gpu` を `tensorflow` に変更する。
 * `docker-compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 #### VSCode の設定
