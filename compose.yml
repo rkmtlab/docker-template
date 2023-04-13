@@ -8,4 +8,5 @@ services:
       - ${PORT:-2000}:2000
     volumes:
       - ${WORKSPACE:-./workspace}:/workspace
+    shm_size: "32gb"
     restart: always
