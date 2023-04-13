@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1.2
+
 FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04
 ENV     DEBIAN_FRONTEND noninteractive
 
@@ -17,7 +19,7 @@ RUN     apt-get update && apt-get install -y \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 COPY    requirements.txt        /tmp/requirements.txt
-RUN     pip install --no-cache-dir -r /tmp/requirements.txt \
+RUN     --mount=type=cache,mode=0755,target=/root/.cache pip install -r /tmp/requirements.txt \
         && rm /tmp/*
 
 # create guest user
