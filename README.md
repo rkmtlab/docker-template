@@ -15,8 +15,7 @@ $ git clone https://github.com/rkmtlab/docker-template.git
 $ cd docker-template
 ```
 
-- `Dockerfile` で、マウントする場所を調整。
-- `PORT={任意のポート番号} docker compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができ上がり、指定した Post 番号で JupyterLab が立ち上がる。
+- `PORT={任意のポート番号} WORKSPACE={/workspaceにマウントしたいディレクトリ} docker compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができ上がり、指定した Post 番号で JupyterLab が立ち上がる。
 
 - docker の中に入る。 `docker exec -it (container名) bash`
 - `/root/` にある start.sh を`/workspace/`に持ってきて、jupyter server を立ち上げる。
@@ -69,10 +68,10 @@ git checkout dev/use-github
 
 ### Tips
 
-`--name` で Project Name をつけることを推奨。誰のものかわからなくなるので
+`-p` で Project Name をつけることを推奨。誰のものかわからなくなるので
 
 ```bash
-$ docker compose up --name (Project Name) --build -d
+$ docker compose -p up (Project Name) --build -d
 ```
 
 ## 関連ページ

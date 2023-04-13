@@ -8,5 +8,5 @@ services:
       - ${PORT:-2000}:2000
       - "2022:22"
     volumes:
-      - ./workspace:/workspace
+      - ${WORKSPACE:-./workspace}:/workspace
     restart: always
