@@ -15,8 +15,8 @@ $ git clone https://github.com/rkmtlab/docker-template.git
 $ cd docker-template
 ```
 
-- `compose.yml` のサーバーに開けるポート番号を変更。 `Dockerfile` で、マウントする場所を調整。
-- `docker compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
+- `Dockerfile` で、マウントする場所を調整。
+- `PORT={任意のポート番号} docker compose up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができ上がり、指定した Post 番号で JupyterLab が立ち上がる。
 
 - docker の中に入る。 `docker exec -it (container名) bash`
 - `/root/` にある start.sh を`/workspace/`に持ってきて、jupyter server を立ち上げる。

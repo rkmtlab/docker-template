@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - 2000:2000
+      - ${PORT:-2000}:2000
       - "2022:22"
     volumes:
       - ./workspace:/workspace
