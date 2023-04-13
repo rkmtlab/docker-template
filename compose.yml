@@ -9,4 +9,5 @@ services:
       - "2022:22"
     volumes:
       - ${WORKSPACE:-./workspace}:/workspace
+    shm_size: "32gb"
     restart: always
