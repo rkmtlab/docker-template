@@ -7,5 +7,5 @@ services:
     ports:
       - ${PORT:-2000}:2000
     volumes:
-      - ./workspace:/workspace
+      - ${WORKSPACE:-./workspace}:/workspace
     restart: always
