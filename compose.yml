@@ -5,7 +5,7 @@ services:
     build:
       context: .
     ports:
-      - 2000:2000
+      - ${PORT:-2000}:2000
     volumes:
       - ./workspace:/workspace
     restart: always
