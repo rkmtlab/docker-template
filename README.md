@@ -67,6 +67,14 @@ git checkout dev/use-github
 
 - `docker compose down`
 
+### Tips
+
+`--name` で Project Name をつけることを推奨。誰のものかわからなくなるので
+
+```bash
+$ docker compose up --name (Project Name) --build -d
+```
+
 ## 関連ページ
 
 暦本研 scrapbox
