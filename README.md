@@ -46,7 +46,7 @@ git checkout dev/use-github
     - ubuntu version : `cat /etc/os-release`
     - cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
   - `requirements.txt` で、 `tensorflow-gpu` を `tensorflow` に変更する。
-- `docker compose up -p (Project Name) --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
+- `docker compose -p (Project Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 #### VSCode の設定
 
