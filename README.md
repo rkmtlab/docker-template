@@ -41,7 +41,8 @@ git checkout dev/use-github
 ```
 
 - `compose.yml` と `Dockerfile` と `requirements.txt` の中身を変更。
-  - `compose.yml` のサーバーに開けるポート番号、ubuntu・cuda の version と `Dockerfile`の github アカウント名・マウントする場所の調整。
+  - `compose.yml` のサーバーに開けるポート番号
+  - `Dockerfile`のubuntu・cuda の version、github アカウント名・マウントする場所の調整。
     - ubuntu version : `cat /etc/os-release`
     - cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
   - `requirements.txt` で、 `tensorflow-gpu` を `tensorflow` に変更する。
