@@ -30,40 +30,7 @@ $ . start.sh
 
 ### VSCode を使う場合
 
-`dev/use-github` ブランチへ。
-
-#### コンテナの作成
-
 - 使用するディレクトリにてレポジトリを clone し、`dev/use-github` ブランチに移動。
-
-```
-git clone https://github.com/rkmtlab/docker-template.git
-cd docker-template
-git checkout dev/use-github
-```
-
-- `compose.yml` と `Dockerfile` と `requirements.txt` の中身を変更。
-  - `compose.yml` のサーバーに開けるポート番号
-  - `Dockerfile`のubuntu・cuda の version、github アカウント名・マウントする場所の調整。
-    - ubuntu version : `cat /etc/os-release`
-    - cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
-  - `requirements.txt` で、 `tensorflow-gpu` を `tensorflow` に変更する。
-- `docker compose -p (Project Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
-
-#### VSCode の設定
-
-- vscode で Remote Explore という拡張機能を入れる。
-
-  - ![image](https://user-images.githubusercontent.com/64390823/209894093-3fcbb271-33b2-4bf4-896f-1826f282cb71.png)
-
-- `ssh` の右にある `+` をクリック。
-- 出てきた窓に `ssh root@(IP address) -p (docker compose で設定した、リモート接続先に開けたポート番号) -i (github の秘密鍵へのPATH) ` と入力する。
-- 出てくる「 `~/.ssh/config` を開く」のボタンを押す。
-
-- `Host (IPアドレス）` となっているところの `(IPアドレス）`を好きな名前に変える。
-  - (`dvorak`など。`a` でも `b` でも OK。入るときに使う名前なので何でもいい。)
-- `REMOTE` の右側の更新ボタンを押す。
-  - 現れる、`（設定した名前）`の右側のボタンを押すと、VSCode で Jupyter が使える。
 
 ### コンテナの閉じ方
 
