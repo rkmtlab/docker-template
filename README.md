@@ -30,6 +30,8 @@ $ . start.sh
 
 ### VSCode を使う場合
 
+`dev/use-github`  ブランチへ。
+
 - 使用するディレクトリにてレポジトリを clone し、`dev/use-github` ブランチに移動。
 
 ### コンテナの閉じ方
