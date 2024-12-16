@@ -22,7 +22,7 @@ git checkout dev/use-github
   - `Dockerfile`のubuntu・cuda の version、github アカウント名・マウントする場所の調整。
     - ubuntu version : `cat /etc/os-release`
     - cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
-- `docker compose -p (Project Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
+- `docker compose -p (Container Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 #### VSCode の設定
 
