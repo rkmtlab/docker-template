@@ -28,11 +28,9 @@ $ . start.sh
 - local PC のブラウザの検索欄に、 `http://(サーバーのIPアドレス）:(開けたサーバーのポート）` と打ち込むと JupyterLab が立ち上がる。
   - 例： `https://172.244.9.33:2987`
 
-### VSCode を使う場合
-
-`dev/use-github`  ブランチへ。
-
+### VSCode を使う場合 → `dev/use-github`  ブランチへ。
 - 使用するディレクトリにてレポジトリを clone し、`dev/use-github` ブランチに移動。
+- `dev/use-github` の README.md にあるやり方で作成する。
 
 ### コンテナの閉じ方
 
