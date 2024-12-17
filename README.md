@@ -27,6 +27,7 @@ git checkout dev/use-github
     - （参考）このレポジトリにある nvidia/cuda image の version は、 hgx の環境に合わせている。
       - `FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04`
 - `docker compose -p (Container Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
+  - `-p` で Container Name をつけることを推奨。誰のものかわからなくなるので。
 
 #### VSCode の設定
 
@@ -47,13 +48,6 @@ git checkout dev/use-github
 
 - `docker compose down`
 
-### Tips
-
-`-p` で Project Name をつけることを推奨。誰のものかわからなくなるので
-
-```bash
-$ docker compose -p up (Project Name) --build -d
-```
 
 ## 関連ページ
 
