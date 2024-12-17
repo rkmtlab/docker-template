@@ -21,11 +21,12 @@ git checkout dev/use-github
 - `docker-compose.yml` と `Dockerfile` の中身を変更する。
   - `docker-compose.yml` のサーバーに開けるポート番号を設定する。
   - `Dockerfile`の github アカウント名を自らのアカウント名に変更する。
-    - (optional) 使用する nvidia/cuda image の ubuntu・cuda の version を、使用する環境に合わせる。
-      - ubuntu version の確認方法: `cat /etc/os-release`
-      - cuda version  の確認方法: `cat /usr/local/cuda/version.txt` , `nvcc -V`
+  - (optional) Dockerfile に記載している、使用する nvidia/cuda image の ubuntu・cuda の version を、使用する環境に合わせる。
+    - 該当箇所： `FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04`
+    - ubuntu version の確認方法: `cat /etc/os-release`
+    - cuda version  の確認方法: `cat /usr/local/cuda/version.txt` , `nvcc -V`
     - （参考）このレポジトリにある nvidia/cuda image の version は、 hgx の環境に合わせている。
-      - `FROM    nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04`
+      
 - `docker compose -p (Container Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
   - `-p` で `Container Name` をつけることを推奨。誰のものかわからなくなるので。
 
