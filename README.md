@@ -13,15 +13,16 @@
 
 ```
 git clone https://github.com/rkmtlab/docker-template.git
-cd docker-template
+mv docker-template (Project Name)  # docker-template/ フォルダの名前を、自分のプロジェクト名に変更する。
+cd (Project Name)
 git checkout dev/use-github
 ```
 
-- `compose.yml` と `Dockerfile` の中身を変更。
-  - `compose.yml` のサーバーに開けるポート番号
-  - `Dockerfile`のubuntu・cuda の version、github アカウント名・マウントする場所の調整。
-    - ubuntu version : `cat /etc/os-release`
-    - cuda version : `cat /usr/local/cuda/version.txt` , `nvcc -V`
+- `docker-compose.yml` と `Dockerfile` の中身を変更する。
+  - `docker-compose.yml` のサーバーに開けるポート番号を設定する。
+  - `Dockerfile`の ubuntu・cuda の version、github アカウント名を調整する。
+    - ubuntu version の確認方法: `cat /etc/os-release`
+    - cuda version  の確認方法: `cat /usr/local/cuda/version.txt` , `nvcc -V`
 - `docker compose -p (Container Name) up --build -d` とコマンドを打ち込む -> 分析環境のコンテナができる。
 
 #### VSCode の設定
