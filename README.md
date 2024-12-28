@@ -66,5 +66,7 @@ WORKDIR /root/workspace
 ```
 の間に、以下のコードを入れて、ssh でコンテナに入ったときに、自動的に /root/workspace に移れるようにする。
 
+```
 # 自動的に /root/workspace に移動するコマンドを .bashrc に追加
 RUN echo 'cd /root/workspace' >> /root/.bashrc
+```
