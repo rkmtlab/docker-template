@@ -54,3 +54,17 @@ git checkout dev/use-github
 
 暦本研 scrapbox
 [VSCode を使って、Jupyter を使える docker container を作る。](https://scrapbox.io/rkmtlab/VSCode_%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%80%81Jupyter_%E3%82%92%E4%BD%BF%E3%81%88%E3%82%8B_docker_container_%E3%82%92%E4%BD%9C%E3%82%8B%E3%80%82)
+
+
+## あとやりたいこと
+Dockerfile の
+```
+# ** change github username and delete $ and {}
+RUN curl -s https://github.com/${GITHUB_USERNAME}.keys >>  ~/.ssh/authorized_keys
+
+WORKDIR /root/workspace
+```
+の間に、以下のコードを入れて、ssh でコンテナに入ったときに、自動的に /root/workspace に移れるようにする。
+
+# 自動的に /root/workspace に移動するコマンドを .bashrc に追加
+RUN echo 'cd /root/workspace' >> /root/.bashrc
