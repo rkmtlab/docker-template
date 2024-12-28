@@ -29,6 +29,9 @@ RUN mkdir -p ~/.ssh
 # ** change github username and delete $ and {}
 RUN curl -s https://github.com/${GITHUB_USERNAME}.keys >>  ~/.ssh/authorized_keys
 
+# 自動的に /root/workspace に移動するコマンドを .bashrc に追加
+RUN echo 'cd /root/workspace' >> /root/.bashrc
+
 WORKDIR /root/workspace
 
 RUN mkdir /var/run/sshd
